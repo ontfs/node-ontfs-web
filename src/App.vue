@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-container direction = "vertical">
+      <router-view></router-view>
+    </el-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TopNav from "./components/common/Top";
+import FooterNav from "./components/common/Footer";
+import "./assets/css/index.css"
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TopNav,
+    FooterNav
   }
 }
 </script>
@@ -23,6 +26,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
+body {
+    display: block;
+    margin: 0px;
+}
+/* .el-container{
+  min-width: 960px;
+} */
 </style>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>logo-footer@1x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="footer" transform="translate(-225.000000, -46.000000)" fill="#48A3FF">
+            <g id="Group-13" transform="translate(225.000000, 46.000000)">
+                <g id="编组" transform="translate(-0.000136, 0.500000)">
+                    <path d="M2.23077262,2.19707583 L2.23077262,2.19707583 L0.000136054422,0.000169387755 L0.000136054422,7.50016939 C0.000136054422,9.41990837 0.743681577,11.3389882 2.23077262,12.8032629 C5.20462008,15.7324715 10.025954,15.7324715 13.0001361,12.8032629 L2.23077262,2.19707583 Z" id="Fill-11"></path>
+                    <path d="M13.7698341,12.8032388 L13.7698341,12.8032388 L16.0001361,15.0001694 L16.0001361,7.50008699 C16.0001361,5.5806565 15.2565905,3.661226 13.7698341,2.19660561 C10.795652,-0.73197602 5.97431814,-0.73197602 3.00013605,2.19660561 L13.7698341,12.8032388 Z" id="Fill-12"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
