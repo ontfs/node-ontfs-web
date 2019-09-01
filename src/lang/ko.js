@@ -39,7 +39,7 @@ export default {
     fee:"수수료 분배 비율",
     progress:"스테이킹 진도",
     stake:"",
-    stakeurl:"https://ont.io",
+    stakeurl:"https://medium.com/ontologynetwork/owallet-stake-authorization-feature-released-11776706bb34",
     initpos:"최초 스테이킹 량",
     totalstake:"총 스테이킹 수량",
     reward1:"다음 주기 스테이킹 수수료 분배 비율은 노드가 지정합니다. 모든 노드가 스테이킹한 사용자들에게 온톨로지 자금 바운티를 재공하는게 아니오니 주의해 주세요.",

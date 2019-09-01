@@ -38,7 +38,7 @@ export default {
     fee:"Fee Sharing Ratio",
     progress:"Progress",
     stake:"",
-    stakeurl:"https://ont.io",
+    stakeurl:"https://medium.com/ontologynetwork/owallet-stake-authorization-feature-released-11776706bb34",
     initpos:"Init Pos",
     totalstake:"Total Stake",
     reward1:"This is the portion of transaction fees received the node has chosen to share with users who have authorized stakes with them in the next consensus round. Note not all nodes share the Ontology Foundation bonus with users who have authorized stakes with them.",

@@ -39,7 +39,7 @@ export default {
     fee:"手续费分配比例",
     progress:"质押进度",
     stake:"",
-    stakeurl:"https://ont.io",
+    stakeurl:"https://mp.weixin.qq.com/s/LqmfcDEZTQGEaQAOrjNQyg",
     initpos:"初始质押量",
     totalstake:"总质押量",
     reward1:"分配给下一共识周期质押用户的手续费比例由节点自行制定。请注意并非所有节点都会向质押用户分配本体基金会奖励。",
