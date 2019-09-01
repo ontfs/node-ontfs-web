@@ -211,3 +211,25 @@ body .lang_zh{
 .el-row:focus{
   outline: none;
 }
+.table-num-text,.table-num-header{
+  text-align: right;
+}
+.table-num-text-right{
+  text-align: right;
+}
+.table-num-text-center{
+  text-align: center;
+}
+.table-num-header{
+  width: 100%;
+  padding-right: 0 !important;
+}
+.nodes-list-wrapper .el-table th>.cell{
+  display: flex;
+}
+.cell .el-progress__text{
+  text-align: right;
+}
+.tip-content-text{
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
+}

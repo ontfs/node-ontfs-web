@@ -55,6 +55,7 @@ export default {
   font-weight:400;
   margin: 0;
   padding:30px 0 0;
+  color:#000;
 }
 .stake-amount-container{
   text-align:left;

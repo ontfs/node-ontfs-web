@@ -33,6 +33,7 @@
       prop="name"
       :label="$t('nodelist.name')"
       fixed
+      width="130"
      >
     </el-table-column>
     <el-table-column
@@ -55,22 +56,29 @@
     <el-table-column
       prop="region"
       :label="$t('nodelist.location')"
-      width="120">
+      width="100">
     </el-table-column>
     <el-table-column
       prop="current_stake"
       :label="$t('nodelist.totalstake')"
-      width="159">
+      width="155"
+      >
+      <template slot="header" slot-scope="scope">
+        <div class="table-num-header"><span>{{$t('nodelist.totalstake')}}</span></div>
+      </template>
       <template slot-scope="scope">
-        {{$HelperTools.toFinancialVal(scope.row.current_stake)}}
+        <div class="table-num-text-right">{{$HelperTools.toFinancialVal(scope.row.current_stake)}}</div>
       </template>
     </el-table-column>
     <el-table-column
       prop="init_pos"
       :label="$t('nodelist.initpos')"
-      width="159">
+      width="155">
+      <template slot="header" slot-scope="scope">
+        <div class="table-num-header"><span>{{$t('nodelist.initpos')}}</span></div>
+      </template>
       <template slot-scope="scope">
-        {{$HelperTools.toFinancialVal(scope.row.init_pos)}}
+        <div class="table-num-text-right">{{$HelperTools.toFinancialVal(scope.row.init_pos)}}</div>
       </template>
     </el-table-column>
 <!--     <el-table-column
@@ -93,6 +101,7 @@
       :label="$t('nodelist.fee')"
       width="170">
       <template slot="header" slot-scope="scope">
+        <div class="table-num-header">
         <el-tooltip class="item" effect="light"  placement="top">
           <div slot="content"><p class="tip-content-text">{{$t('nodelist.reward1')}}</p></div>
           <span>
@@ -100,12 +109,16 @@
           <img src="../../assets/img/table/info-circle.png" style="transform: translateY(2px);">
           </span>
         </el-tooltip>
+        </div>
+      </template>
+      <template slot-scope="scope">
+        <div class="table-num-text-right">{{scope.row.node_proportion}}</div>
       </template>
     </el-table-column>
     <el-table-column
       prop="progress"
       :label="$t('nodelist.progress')"
-      width="140">
+      width="160">
       <template slot-scope="scope">
           <el-progress :percentage="parseInt(scope.row.progress)" :color="customColors" ></el-progress>
       </template>
@@ -113,7 +126,7 @@
     <el-table-column
       prop="progress"
       :label="$t('nodelist.stake')"
-      width="80">
+      >
       <template slot-scope="scope">
         <div v-if="parseInt(scope.row.progress) < 100" ><a class="goStake-text" :href="$t('nodelist.stakeurl')" target="_blank">Stake</a></div>
       </template>
@@ -268,7 +281,7 @@
 }
 .rank-up-num{
   font-size:10px;
-  font-family:NunitoSans;
+  font-family:NunitoSans-Regular;
   font-weight:400;
   color:rgba(54,203,71,1);
   line-height:14px;
@@ -276,7 +289,7 @@
 }
 .rank-down-num{
   font-size:10px;
-  font-family:NunitoSans;
+  font-family:NunitoSans-Regular;
   font-weight:400;
   color:rgba(212,0,0,1);
   line-height:14px;
@@ -294,7 +307,7 @@
 }
 .goStake-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family:NunitoSans-Regular;
   font-weight:400;
   color: rgba(72,163,255,1) !important;
   line-height:19px;
