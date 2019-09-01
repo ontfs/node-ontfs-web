@@ -2,7 +2,7 @@
     <el-header>
         <el-menu  class="el-menu-demo" mode="horizontal">
             <el-row>
-                <div style="display: flex;justify-content: space-between;">
+                <div class="header-wrapper" style="display: flex;justify-content: space-between;">
                   <div>
                       <a href="/"><img style=" height: 23px;margin: 17px 0 0 20px;"src="../../assets/img/top/logo.png" /></a>
                   </div>
