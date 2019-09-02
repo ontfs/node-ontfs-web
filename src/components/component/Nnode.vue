@@ -2,7 +2,7 @@
   <el-table
     :data="ndate"
     border
-    @row-click="openDetails"
+    @cell-click="handle"
     style="width: 100%">
     <el-table-column
       prop="node_rank"
@@ -122,7 +122,7 @@
       </template>
     </el-table-column>
     <el-table-column
-      prop="progress"
+      prop="stakeprogress"
       :label="$t('nodelist.stake')"
       >
       <template slot-scope="scope">
@@ -190,6 +190,19 @@
             name: 'detailtype',
             params: {pk: row.public_key,address:row.address,type:'balance'}
           })
+    },
+    handle(row,column,event,cell){
+        if(column.property == "stakeprogress"){
+          let url = this.$t('nodelist.stakeurl')
+          if( parseInt(row.progress) < 100 ){
+            window.open(url)
+          }
+        }else{
+          this.$router.push({
+                name: 'detailtype',
+                params: {pk: row.public_key,address:row.address,type:'balance'}
+              })
+        }
     }
   }
   }
