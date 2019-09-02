@@ -98,7 +98,7 @@ export default {
       commit("settxlist", arr);
     },
     async getTransferList({ commit }, params) {
-      let url = "http://13.250.221.179:8585/v2/addresses/" + params.address + "/transactions?direction=desc&page_size="+params.pagesize+"&page_number="+params.pageno;
+      let url = "https://node.ont.io/api/v2/addresses/" + params.address + "/transactions?direction=desc&page_size="+params.pagesize+"&page_number="+params.pageno;
       let ret = await axios.get(url);
       let arr = {}
       arr.list = ret.data.result.content
@@ -106,7 +106,7 @@ export default {
       commit("settransferlist", arr);
     },
     async getVoterList({ commit }, params) {
-      let url = "http://13.250.221.179:8585/v2/nodes/governance?page_size="+params.pagesize+"&page_number="+params.pageno+"&pk="+params.pk;
+      let url = "https://node.ont.io/api/v2/nodes/governance?page_size="+params.pagesize+"&page_number="+params.pageno+"&pk="+params.pk;
       let ret = await axios.get(url);
       let arr = {}
       arr.list = ret.data.result.content
