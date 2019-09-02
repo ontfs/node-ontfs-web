@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-loading.fullscreen.lock="fullscreenLoading" class="map-container" id="map-container" :style="mapSize"></div>
-    <MapTools></MapTools>
+    <!-- <MapTools></MapTools> -->
   </div>
 </template>
 
