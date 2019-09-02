@@ -202,6 +202,11 @@
           let url = this.$t('nodelist.stakeurl')
           if( parseInt(row.progress) < 100 ){
             window.open(url)
+          }else{
+            this.$router.push({
+                  name: 'detailtype',
+                  params: {pk: row.public_key,address:row.address,type:'balance'}
+                })            
           }
         }else{
           this.$router.push({
