@@ -41,7 +41,7 @@
         <div class="footer-language">
           <div :class="$t('footer.flag') == 'en' ? 'footer-content-text-active footer-language-content':'footer-language-content footer-content-text' " @click="changeLanguage('en')">English</div>
           <div :class="$t('footer.flag') == 'zh' ? 'footer-content-text-active footer-language-content':'footer-language-content footer-content-text' " style="margin-left: 40px;" @click="changeLanguage('zh')">中文</div>
-          <div :class="$t('footer.flag') == 'ko' ? 'footer-content-text-active footer-language-content':'footer-language-content footer-content-text' " style="margin-left: 40px;" @click="changeLanguage('ko')">한국어</div>
+          <!-- <div :class="$t('footer.flag') == 'ko' ? 'footer-content-text-active footer-language-content':'footer-language-content footer-content-text' " style="margin-left: 40px;" @click="changeLanguage('ko')">한국어</div> -->
         </div>
 
         <div class="footer-line"></div>
