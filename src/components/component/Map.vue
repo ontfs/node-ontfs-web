@@ -50,6 +50,7 @@ export default {
         maxZoom:18,
         minZoom:1,
         renderWorldCopies:true,
+        attributionControl:true,
         id: 'mapbox.streets'
       }
     };
@@ -87,11 +88,18 @@ export default {
             this.addToolitps(mapnodelists[i].ip,maker)
         }
         this.map.addLayer(cluster);
-        this.fullscreenLoading =false
         
+        L.control.attribution({ position: 'bottomleft', prefix: 'Synchronous Nodes Displayed' }).addTo(this.map);
+        this.fullscreenLoading =false
     },
     addMarker() {
         this.$utils.map.createMakerByXY(this.map, [31.505, 44.09]);
+    },
+    addControl(){
+        debugger
+        let con = L.Control.Attribution
+        console.log(con)
+        return con
     },
     getMapNodeList(){
         this.fullscreenLoading =true
