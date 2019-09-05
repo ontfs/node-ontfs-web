@@ -9,7 +9,7 @@
       prop="node_rank"
       :label="$t('nodelist.rank')"
       fixed
-      width="70">
+      width="85">
       <template slot="header" slot-scope="scope">
         <el-tooltip class="item" effect="light"  placement="top">
           <div slot="content"><p class="tip-content-text">{{$t('nodelist.rankDesc')}}</p></div>
@@ -61,7 +61,7 @@
     <el-table-column
       prop="current_stake"
       :label="$t('nodelist.totalstake')"
-      width="155"
+      width="145"
       >
       <template slot="header" slot-scope="scope">
         <div class="table-num-header"><span>{{$t('nodelist.totalstake')}}</span></div>
@@ -73,7 +73,7 @@
     <el-table-column
       prop="init_pos"
       :label="$t('nodelist.initpos')"
-      width="155">
+      width="145">
       <template slot="header" slot-scope="scope">
         <div class="table-num-header"><span>{{$t('nodelist.initpos')}}</span></div>
       </template>
@@ -219,10 +219,6 @@
   }
 </script>
 <style>
-.nodes-list-wrapper .el-table thead th{
-  background-color: black;
-  height: 80px;
-}
 .el-table--border th,.el-table--border td{
   border-right: 0px solid #EBEEF5;
 }

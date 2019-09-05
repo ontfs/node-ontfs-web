@@ -233,3 +233,7 @@ body .lang_zh{
 .tip-content-text{
   font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
 }
+.nodes-list-wrapper .el-table thead th{
+  background-color: black;
+  height: 60px;
+}
