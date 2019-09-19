@@ -128,7 +128,7 @@
       :label="$t('nodelist.stake')"
       >
       <template slot-scope="scope">
-        <div v-if="parseInt(scope.row.progress) < 100" ><a class="goStake-text" :href="$t('nodelist.stakeurl')" target="_blank">Stake</a></div>
+        <div v-if="parseInt(scope.row.progress) < 100" ><a class="goStake-text">Stake</a></div>
       </template>
     </el-table-column>
 <!--     <el-table-column
@@ -201,7 +201,9 @@
         if(column.property == "stakeprogress"){
           let url = this.$t('nodelist.stakeurl')
           if( parseInt(row.progress) < 100 ){
-            window.open(url)
+            this.$router.push({
+                  name: 'stake'
+                }) 
           }else{
             this.$router.push({
                   name: 'detailtype',

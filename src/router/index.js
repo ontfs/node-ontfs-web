@@ -25,6 +25,11 @@ const routes = [
     name: "detailwithouttype",
     component: _import("main/Detail")
   },
+  {
+    path: "/stake",
+    name: "stake",
+    component: _import("main/Stake")
+  },
 ];
 
 const router = new Router({

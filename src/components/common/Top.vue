@@ -28,7 +28,7 @@
                       <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="en"><span :class="$i18n.locale == 'en'?'lang-active':'lang-noactive'">English</span></el-dropdown-item>
                         <el-dropdown-item command="zh"><span :class="$i18n.locale == 'zh'?'lang-active':'lang-noactive'">中文</span></el-dropdown-item>
-                        <!-- <el-dropdown-item command="ko">한국어</el-dropdown-item> -->
+                        <el-dropdown-item command="ko"><span :class="$i18n.locale == 'ko'?'lang-active':'lang-noactive'">한국어</span></el-dropdown-item>
                       </el-dropdown-menu>
                     </el-dropdown>
                   </div>
