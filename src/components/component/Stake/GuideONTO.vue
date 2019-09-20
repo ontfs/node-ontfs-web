@@ -169,7 +169,7 @@ export default {
   margin-bottom: 24px;
 }
 .onto-on-guide-text-container .on-guide-onto-img-img{
-  /* max-height: 300px; */
+  max-height: 800px;
   border:1px solid #0000000f;
 }
 .on-guide-note{
@@ -195,6 +195,7 @@ export default {
   line-height:21px;
   text-align: left;
   word-break: break-word;
+  border-radius: 6px;
   
 }
 .el-tabs__item{
@@ -239,6 +240,10 @@ export default {
   }
   .guide-class {
       margin: 0 10px;
+  }
+  .onto-on-guide-text-container .on-guide-onto-img-img{
+    max-height: 1000px;
+    border:1px solid #0000000f;
   }
 }
 </style>

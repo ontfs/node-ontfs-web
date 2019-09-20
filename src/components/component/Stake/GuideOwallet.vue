@@ -203,6 +203,7 @@ export default {
   line-height:21px;
   text-align: left;
   word-break: break-word;
+  border-radius: 6px;
 }
 .el-tabs__item{
   color: #C2C2C2;
