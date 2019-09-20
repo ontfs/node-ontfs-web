@@ -285,7 +285,7 @@
 }
 .rank-up-num{
   font-size:10px;
-  font-family:NunitoSans-Regular;
+  font-family:NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(54,203,71,1);
   line-height:14px;
@@ -293,7 +293,7 @@
 }
 .rank-down-num{
   font-size:10px;
-  font-family:NunitoSans-Regular;
+  font-family:NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(212,0,0,1);
   line-height:14px;
@@ -311,7 +311,7 @@
 }
 .goStake-text{
   font-size:14px;
-  font-family:NunitoSans-Regular;
+  font-family:NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color: rgba(72,163,255,1) !important;
   line-height:19px;

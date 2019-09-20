@@ -193,19 +193,19 @@ export default {
 }
 .ow-guide-blod-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(0,0,0,1);
   line-height:19px;
 }
 .ow-guide-normal-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family:NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(0,0,0,1);
   line-height:19px;
   text-align: left;
-  
+  word-break: break-word;
 }
 .el-tabs__item{
   color: #C2C2C2;
@@ -222,12 +222,10 @@ export default {
   .ow-guide-step{
     margin:0 16px;
     width: auto;
-    word-break: keep-all;
   }
   .ow-guide-note{
     margin:0 16px;
     width: auto;
-    word-break: keep-all;
   }
   .ow-guide-owallet-img-img{
     width: 100%;
@@ -247,6 +245,7 @@ export default {
   }
   .ow-guide-text-warpper{
     padding: 8px 0;
+    margin: 0;
   }
 }
 </style>

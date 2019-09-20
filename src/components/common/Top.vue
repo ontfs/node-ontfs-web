@@ -144,7 +144,7 @@ a:-webkit-any-link{
 }
 .el-dropdown-link,.el-dropdown-selfdefine{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(255,255,255,1);
   line-height:19px;

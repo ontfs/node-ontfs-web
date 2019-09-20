@@ -99,7 +99,7 @@ export default {
 }
 .stake-progress-status-text1{
   font-size:21px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(0,0,0,1);
   line-height:28px;
@@ -107,14 +107,14 @@ export default {
 }
 .stake-progress-status-text2{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(194,194,194,1);
   line-height:19px;
 }
 .stake-progress-text{
   font-size:16px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(0,0,0,1);
   line-height:22px;

@@ -174,14 +174,14 @@ a:-webkit-any-link {
 }
 .owner-address{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(72,163,255,1) !important;
   line-height:19px;
 }
 .no-owner-address{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(0,0,0,1) !important;
   line-height:19px;
@@ -192,7 +192,7 @@ a:-webkit-any-link {
   border-radius:11px;
   border:1px solid rgba(219,140,37,1);
   font-size:12px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(219,140,37,1);
   line-height:20px;
@@ -204,7 +204,7 @@ a:-webkit-any-link {
   border-radius:11px;
   border:1px solid rgba(54,203,71,1);
   font-size:12px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(54,203,71,1);
   line-height:20px;
@@ -218,7 +218,7 @@ a:-webkit-any-link {
 }
 .transfer-height-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   line-height:19px;
 }

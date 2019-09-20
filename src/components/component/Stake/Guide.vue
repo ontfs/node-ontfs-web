@@ -164,14 +164,14 @@ export default {
 }
 .guide-title-text{
   font-size:24px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(0,0,0,1);
   line-height:32px;
 }
 .big-guide-class .el-tabs__item{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   line-height:19px;
   height: 58px;

@@ -182,18 +182,19 @@ export default {
 }
 .on-guide-blod-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(0,0,0,1);
   line-height:19px;
 }
 .on-guide-normal-text{
   font-size:14px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(0,0,0,1);
   line-height:19px;
   text-align: left;
+  word-break: break-word;
   
 }
 .el-tabs__item{
@@ -211,12 +212,10 @@ export default {
   .on-guide-step{
     margin:0 16px;
     width: auto;
-    word-break: keep-all;
   }
   .on-guide-note{
     margin:0 16px;
     width: auto;
-    word-break: keep-all;
   }
   .on-guide-onto-img-img{
     width: 100%;

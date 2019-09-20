@@ -94,7 +94,7 @@ export default {
 }
 .stake-summary-desc-text1{
   font-size:22px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(255,255,255,1);
   line-height:30px;
@@ -102,7 +102,7 @@ export default {
 }
 .stake-summary-desc-text2{
   font-size:16px;
-  font-family:NunitoSans;
+  font-family: NunitoSans-Bold,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:bold;
   color:rgba(255,255,255,1);
   line-height:22px;
