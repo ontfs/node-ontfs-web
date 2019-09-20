@@ -71,11 +71,11 @@ export default {
     "roundfirstinfo":function(){
       let timestamp = Date.parse(new Date())/1000;
       let eachBlockTime = ((timestamp - this.roundfirstinfo.Timestamp)/(120000 -  this.blockAmount)).toFixed(5)
-      console.log(eachBlockTime)
+/*       console.log(eachBlockTime) */
       let lastime = eachBlockTime*this.blockAmount
       this.days = Math.floor((lastime/86400))
       this.hours = Math.ceil((lastime - this.days*86400)/3600)
-      console.log("距离"+this.round+"周期结束还有"+this.days+"天"+this.hours+"小时")
+/*       console.log("距离"+this.round+"周期结束还有"+this.days+"天"+this.hours+"小时") */
     }
   },
   methods: {
