@@ -111,7 +111,7 @@ export default {
     blocks:"blocks",
     guide:"Stake Guide",
     onto:"ONTO",
-    owallet:"Owallet"
+    owallet:"OWallet"
   },
   onto:{
     item1:"Step 1: ",

@@ -44,10 +44,7 @@
       <div class="ow-guide-note">
         <p class=" ow-guide-normal-text">
           <span class="ow-guide-blod-text">{{$t('owallet.item17')}}</span>
-          {{$t('owallet.item18')}}
-        </p>
-        <p class=" ow-guide-normal-text">
-          {{$t('owallet.item19')}}
+          {{$t('owallet.item18')}}{{$t('owallet.item19')}}
         </p>
       </div>
     </div>
@@ -203,7 +200,7 @@ export default {
   font-family:NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(0,0,0,1);
-  line-height:19px;
+  line-height:21px;
   text-align: left;
   word-break: break-word;
 }
@@ -246,6 +243,9 @@ export default {
   .ow-guide-text-warpper{
     padding: 8px 0;
     margin: 0;
+  }
+  .guide-class {
+      margin: 0 10px;
   }
 }
 </style>

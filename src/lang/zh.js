@@ -114,7 +114,7 @@ export default {
     blocks:"区块",
     guide:"质押指引",
     onto:"ONTO",
-    owallet:"Owallet"
+    owallet:"OWallet"
   },
   onto:{
     item1:"Step 1: ",

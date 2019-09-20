@@ -159,4 +159,7 @@ a:-webkit-any-link{
 .lang-active{
   color:#afafaf;
 }
+.el-dropdown-menu__item{
+  font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
+}
 </style>

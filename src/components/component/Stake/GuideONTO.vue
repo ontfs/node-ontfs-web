@@ -192,7 +192,7 @@ export default {
   font-family: NunitoSans-Regular,'Avenir', Helvetica, Arial, sans-serif;
   font-weight:400;
   color:rgba(0,0,0,1);
-  line-height:19px;
+  line-height:21px;
   text-align: left;
   word-break: break-word;
   
@@ -236,6 +236,9 @@ export default {
   .on-guide-text-warpper{
     padding: 8px 0;
     width: 100%;
+  }
+  .guide-class {
+      margin: 0 10px;
   }
 }
 </style>
