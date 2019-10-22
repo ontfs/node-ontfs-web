@@ -2,9 +2,13 @@
 <div class="onto-on-guide-text-container">
   <div class="on-guide-text-class">
     <div class="on-guide-text-warpper">
-      <p class="on-guide-step on-guide-normal-text">
+      <p v-if="$i18n.locale !== 'ja'" class="on-guide-step on-guide-normal-text">
         <span class="on-guide-blod-text">{{$t('onto.item1')}}</span>
         {{$t('onto.item2')}}<a style="color: #409EFF;" :href="$t('onto.ontoappurl')" target="_blank">{{$t('onto.item3')}}</a><span v-if="$i18n.locale == 'ko'">{{$t('onto.item3ko')}}</span>
+      </p>
+      <p v-if="$i18n.locale == 'ja'" class="on-guide-step on-guide-normal-text">
+        <span class="on-guide-blod-text">{{$t('onto.item1')}}</span>
+        <a style="color: #409EFF;" :href="$t('onto.ontoappurl')" target="_blank">{{$t('onto.item2')}}</a>{{$t('onto.item3')}}<span v-if="$i18n.locale == 'ko'">{{$t('onto.item3ko')}}</span>
       </p>
     </div>
     <div class="on-guide-text-warpper">

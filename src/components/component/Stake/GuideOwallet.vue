@@ -2,9 +2,13 @@
 <div class="owallet-ow-guide-text-container">
   <div class="ow-guide-text-class">
     <div class="ow-guide-text-warpper">
-      <p class="ow-guide-step ow-guide-normal-text">
+      <p v-if="$i18n.locale !== 'ja'" class="ow-guide-step ow-guide-normal-text">
         <span class="ow-guide-blod-text">{{$t('owallet.item1')}}</span>
         {{$t('owallet.item2')}}<a  style="color: #409EFF;"  :href="$t('owallet.owalleturl')" target="_blank">{{$t('owallet.item3')}}</a>{{$t('owallet.item4')}}
+      </p>
+      <p v-if="$i18n.locale == 'ja'" class="ow-guide-step ow-guide-normal-text">
+        <span class="ow-guide-blod-text">{{$t('owallet.item1')}}</span>
+        <a  style="color: #409EFF;"  :href="$t('owallet.owalleturl')" target="_blank">{{$t('owallet.item2')}}</a>{{$t('owallet.item3')}}{{$t('owallet.item4')}}
       </p>
     </div>
     <div class="ow-guide-text-warpper">
@@ -15,7 +19,9 @@
     <div class="ow-guide-text-warpper">
       <p class="ow-guide-step ow-guide-normal-text">
         <span class="ow-guide-blod-text">{{$t('owallet.item6')}}</span>
-        {{$t('owallet.item7')}}<span class="ow-guide-blod-text" >{{$t('owallet.item8')}}</span><span v-if="$i18n.locale == 'ko'" >{{$t('owallet.item8ko')}}</span>
+        {{$t('owallet.item7')}}<span class="ow-guide-blod-text" >{{$t('owallet.item8')}}</span>
+        <span v-if="$i18n.locale == 'ko'" >{{$t('owallet.item8ko')}}</span>
+        <span v-if="$i18n.locale == 'ja'" >{{$t('owallet.item8ja')}}</span>
       </p>
     </div>
     <div class="ow-guide-text-warpper">
@@ -56,7 +62,7 @@
     <div class="ow-guide-text-warpper">
       <p class="ow-guide-step ow-guide-normal-text">
         <span class="ow-guide-blod-text">{{$t('owallet.item21')}}</span>
-        {{$t('owallet.item22')}}<span class="ow-guide-blod-text" >{{$t('owallet.item23')}}</span>{{$t('owallet.item24')}}
+        {{$t('owallet.item22')}}<span class="ow-guide-blod-text" >{{$t('owallet.item23')}}</span>{{$t('owallet.item23ja')}}{{$t('owallet.item24')}}
       </p>
     </div>
     <div class="ow-guide-text-warpper">
@@ -97,7 +103,7 @@
           <span class="ow-guide-blod-text">{{$t('owallet.item33')}}</span>
         </p>
         <p class="ow-guide-normal-text">
-          {{$t('owallet.item34')}}
+          <span class="ow-guide-blod-text" v-if="$i18n.locale == 'ja'">{{$t('owallet.item34ja')}}</span>{{$t('owallet.item34')}}
         </p>
         <p class="ow-guide-normal-text">
           {{$t('owallet.item35')}}
