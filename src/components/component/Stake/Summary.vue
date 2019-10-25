@@ -4,16 +4,20 @@
       <div class="stake-summary-content">
         <img class="stake-summary-img" src="../../../assets/img/stake/time.png"/>
         <div class="stake-summary-desc">
-          <span class="stake-summary-desc-text1" v-if="$i18n.locale !='zh'">{{days}} {{$t('stake.days')}} {{hours}} {{$t('stake.hours')}} {{$t('stake.left')}}</span>
+          <span class="stake-summary-desc-text1" v-if="$i18n.locale =='en'">{{days}} {{$t('stake.days')}} {{hours}} {{$t('stake.hours')}} {{$t('stake.left')}}</span>
+          <span class="stake-summary-desc-text1" v-if="$i18n.locale =='ko'">{{days}} {{$t('stake.days')}} {{hours}} {{$t('stake.hours')}} {{$t('stake.left')}}</span>
           <span class="stake-summary-desc-text1" v-if="$i18n.locale =='zh'">{{$t('stake.cnleft')}} {{days}} {{$t('stake.days')}} {{hours}} {{$t('stake.hours')}}</span>
+          <span class="stake-summary-desc-text1" v-if="$i18n.locale =='ja'">{{$t('stake.jaleft')}} {{days}} {{$t('stake.days')}} {{hours}} {{$t('stake.hours')}}</span>
           <span class="stake-summary-desc-text2">{{$t('stake.currnetround1')}}</span>
         </div>
       </div>
       <div class="stake-summary-content">
         <img class="stake-summary-img" src="../../../assets/img/stake/block.png"/>
         <div class="stake-summary-desc">
-          <span  class="stake-summary-desc-text1" v-if="$i18n.locale !='zh'">{{$HelperTools.toFinancialVal(blockAmount)}} {{$t('stake.blocks')}} {{$t('stake.left')}}</span>
+          <span  class="stake-summary-desc-text1" v-if="$i18n.locale =='en'">{{$HelperTools.toFinancialVal(blockAmount)}} {{$t('stake.blocks')}} {{$t('stake.left')}}</span>
+          <span  class="stake-summary-desc-text1" v-if="$i18n.locale =='ko'">{{$HelperTools.toFinancialVal(blockAmount)}} {{$t('stake.blocks')}} {{$t('stake.left')}}</span>
           <span  class="stake-summary-desc-text1" v-if="$i18n.locale =='zh'">{{$t('stake.cnleft')}} {{$HelperTools.toFinancialVal(blockAmount)}} {{$t('stake.blocks')}}</span>
+          <span  class="stake-summary-desc-text1" v-if="$i18n.locale =='ja'">{{$t('stake.jaleft')}} {{$HelperTools.toFinancialVal(blockAmount)}} {{$t('stake.blocks')}}</span>
           <span  class="stake-summary-desc-text2">{{$t('stake.currnetround')}}</span>
         </div>
       </div>
