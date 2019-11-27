@@ -43,13 +43,8 @@ export default {
   },
   computed: {
     blockAmount() {
-        return this.$store.getters.blockstonext || 0;
-    },
-    percent(){
-        let amount = this.$store.getters.blockstonext || 0;
-        let per = Math.round((120000-amount)/1200)
-        return  per == 100 ? 0 : per
-    },
+        return this.$store.getters.blockstonext.count_to_next_round || 0;
+    }
   },
   data(){
     return{

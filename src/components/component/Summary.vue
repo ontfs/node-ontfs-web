@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     blockAmount() {
-        return this.$store.getters.blockstonext || 0;
+        return this.$store.getters.blockstonext.count_to_next_round || 0;
     },
     nodeAmount() {
         return this.$store.getters.nodeSummary || {};
@@ -39,8 +39,9 @@ export default {
         return this.$store.getters.totalstakeamount || {};
     },
     percent(){
-        let amount = this.$store.getters.blockstonext || 0;
-        let per = Math.round((120000-amount)/1200)
+        let amount = this.$store.getters.blockstonext.count_to_next_round || 0;
+        let total = this.$store.getters.blockstonext.max_staking_change_count || 0;
+        let per = Math.round((total-amount)/(total/100))
         return  per == 100 ? 0 : per
     },
     rankchange(){

@@ -3,10 +3,10 @@
     <div class="stake-progress-status-wrapper stake-progress-status-content" :style="{left: percent+'%'}">
       <div >
         <span class="stake-progress-status-text1">{{percent}}%</span>
-        <span class="stake-progress-status-text2">({{$HelperTools.toFinancialVal(120000-blockAmount)}}/{{$HelperTools.toFinancialVal(120000)}})</span>
+        <span class="stake-progress-status-text2">({{$HelperTools.toFinancialVal(totalAmount-blockAmount)}}/{{$HelperTools.toFinancialVal(totalAmount)}})</span>
       </div>
     </div>
-    <el-progress  :percentage="percent"></el-progress>
+    <el-progress  :percentage="percent?percent:0"></el-progress>
     <p class="stake-progress-p">
       <span><span class="stake-progress-text">{{$t('stake.progress')}} {{$t('stake.round1')}} {{rounds}}{{$t('stake.round2')}}</span></span>
     </p>
@@ -28,11 +28,15 @@ export default {
   },
   computed: {
     blockAmount() {
-        return this.$store.getters.blockstonext || 0;
+        return this.$store.getters.blockstonext.count_to_next_round || 0;
+    },
+    totalAmount() {
+        return this.$store.getters.blockstonext.max_staking_change_count || 0;
     },
     percent(){
-        let amount = this.$store.getters.blockstonext || 0;
-        let per = Math.round((120000-amount)/1200)
+        let amount = this.$store.getters.blockstonext.count_to_next_round || 0;
+        let total = this.$store.getters.blockstonext.max_staking_change_count || 0;
+        let per = Math.round((total-amount)/(total/100))
         return  per == 100 ? 0 : per
     },
   },

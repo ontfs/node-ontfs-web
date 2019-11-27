@@ -5,11 +5,13 @@ const expURL = process.env.VUE_APP_ONT_API_URL;
 export default {
   state: {
     summaryinfo: {},
-    roundfirstinfo:{}
+    roundfirstinfo:{},
+    currentcycleinfo:{}
   },
   getters: {
     summaryinfo: state => state.summaryinfo,
     roundfirstinfo: state => state.roundfirstinfo,
+    currentcycleinfo: state => state.currentcycleinfo,
   },
   mutations: {
     setsummaryinfo(state, payload) {
@@ -17,6 +19,9 @@ export default {
     },
     setroundfirstinfo(state, payload) {
       state.roundfirstinfo = payload;
+    },
+    setcurrentcycleinfo(state, payload) {
+      state.currentcycleinfo = payload;
     },
   },
   actions: {
@@ -29,6 +34,11 @@ export default {
       let url = "https://dappnode1.ont.io:10334/api/v1/block/details/height/"+params.height;
       let ret = await axios.get(url);
       commit("setroundfirstinfo", ret.data.Result.Header);
+    },
+    async getCurrentCycle({ commit }, params) {
+      let url = "https://explorer.ont.io/v2/nodes/current-staking-cycle";
+      let ret = await axios.get(url);
+      commit("setcurrentcycleinfo", ret.data.result);
     }
   }
 };

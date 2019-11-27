@@ -56,6 +56,7 @@ export default {
       commit("setNodeSummary", ret.data.result);
     },
     async getBlocksToNextRound({ commit }) {
+      // let url = "https://explorer.ont.io/v2/nodes/block-count-to-next-round" ;
       let url = "https://explorer.ont.io/v2/nodes/block-count-to-next-round" ;
       let ret = await axios.get(url);
       commit("setBlocksToNextRound", ret.data.result);

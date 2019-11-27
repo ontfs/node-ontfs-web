@@ -41,6 +41,9 @@ export default {
     roundfirstinfo() {
         return this.$store.getters.roundfirstinfo || 0;
     },
+    currentcycleinfo() {
+        return this.$store.getters.currentcycleinfo || 0;
+    },
   },
   watch:{
   },
@@ -62,20 +65,23 @@ export default {
   watch:{
     "blockAmount":function(){
       this.getSummaryInfos()
+      this.getCurrentCycle()
+    },
+    "currentcycleinfo":function(){
+      this.round = this.currentcycleinfo
     },
     "summarydata":function(){
-      this.round = 51 + parseInt(Math.floor(((this.summarydata.block_height - this.startTime)/120000)))
-      let roundFirstBlock = this.summarydata.block_height - (120000 -  this.blockAmount)
+      let roundFirstBlock = this.summarydata.block_height - (this.blockAmount.max_staking_change_count -  this.blockAmount.count_to_next_round)
       this.getRoundFirstInfo(roundFirstBlock)
     },
     "roundfirstinfo":function(){
       let timestamp = Date.parse(new Date())/1000;
-      let eachBlockTime = ((timestamp - this.roundfirstinfo.Timestamp)/(120000 -  this.blockAmount)).toFixed(5)
+      let eachBlockTime = ((timestamp - this.roundfirstinfo.Timestamp)/(this.blockAmount.max_staking_change_count -  this.blockAmount.count_to_next_round)).toFixed(5)
 /*       console.log(eachBlockTime) */
-      let lastime = eachBlockTime*this.blockAmount
+      let lastime = eachBlockTime*this.blockAmount.count_to_next_round
       this.days = Math.floor((lastime/86400))
       this.hours = Math.ceil((lastime - this.days*86400)/3600)
-/*       console.log("距离"+this.round+"周期结束还有"+this.days+"天"+this.hours+"小时") */
+      console.log("距离"+this.round+"周期结束还有"+this.days+"天"+this.hours+"小时")
     }
   },
   methods: {
@@ -89,7 +95,10 @@ export default {
       let params={}
       params.height = $height
       this.$store.dispatch("getRoundFirstInfo",params).then();
-    }
+    },
+    getCurrentCycle(){
+      this.$store.dispatch("getCurrentCycle").then();
+    },
   },
   beforeDestroy() {
     clearInterval(this.intervalBlock1);

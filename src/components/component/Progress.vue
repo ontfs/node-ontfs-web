@@ -4,7 +4,7 @@
       <span v-if="$t('language.name') == 'En'"><countTo :startVal='startVal' :endVal='endVal' :duration='3000' :autoplay='true'></countTo> <span class="progress-text">{{$t('summary.tonext')}}</span></span>
       <span v-else><span class="progress-text">{{$t('summary.tonext')}}</span> <countTo :startVal='startVal' :endVal='endVal' :duration='3000' :autoplay='true'></countTo> <span class="progress-text">{{$t('summary.blocks')}}</span></span>
     </p>
-    <el-progress  :percentage="percent"></el-progress>
+    <el-progress  :percentage="percent?percent:0"></el-progress>
   </div>
 </template>
 
@@ -23,11 +23,12 @@ export default {
   },
   computed: {
     blockAmount() {
-        return this.$store.getters.blockstonext || 0;
+        return this.$store.getters.blockstonext.count_to_next_round || 0;
     },
     percent(){
-        let amount = this.$store.getters.blockstonext || 0;
-        let per = Math.round((120000-amount)/1200)
+        let amount = this.$store.getters.blockstonext.count_to_next_round || 0;
+        let total = this.$store.getters.blockstonext.max_staking_change_count || 0;
+        let per = Math.round((total-amount)/(total/100))
         return  per == 100 ? 0 : per
     },
   },
