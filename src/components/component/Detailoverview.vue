@@ -2,20 +2,23 @@
   <div class="overview-container">
     <div class="overview-content">
       <div class="overview-content-left">
-        <detailoverviewinfo-nav :onchaindata="onchaindata" :offchaindata="offchaindata"></detailoverviewinfo-nav>
+        <detailoverviewinfo-nav
+          :onchaindata="onchaindata"
+          :offchaindata="offchaindata"
+        ></detailoverviewinfo-nav>
       </div>
       <div class="overview-content-right">
-        <detailmap-nav  mapWidth="440px" mapHeight="440px"></detailmap-nav>
+        <detailmap-nav mapWidth="440px" mapHeight="440px"></detailmap-nav>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import DetailoverviewinfoNav from "../component/Detailoverviewinfo";
-import DetailmapNav from "../component/Detailmap";
+import DetailoverviewinfoNav from '../component/Detailoverviewinfo'
+import DetailmapNav from '../component/Detailmap'
 export default {
-  name: "detailoverview",
+  name: 'detailoverview',
   components: {
     DetailoverviewinfoNav,
     DetailmapNav
@@ -23,47 +26,45 @@ export default {
   props: {
     onchaindata: {
       type: Object,
-      default:function(){
+      default: function() {
         return {}
       }
     },
     offchaindata: {
       type: Object,
-      default:function(){
+      default: function() {
         return {}
       }
-    },
-  },
-
-};
+    }
+  }
+}
 </script>
 <style>
-.overview-container{
+.overview-container {
   min-width: 1200px;
   max-width: 1200px;
   background-color: #fff;
   margin: auto;
 }
-.overview-content{
+.overview-content {
   display: flex;
 }
-.overview-content a{
-  color:rgba(128,128,128,1);
+.overview-content a {
+  color: rgba(128, 128, 128, 1);
 }
-.overview-content-left{
-  width:50%;
-  padding-left:40px;
-  padding-right:10px;
+.overview-content-left {
+  width: 50%;
+  padding-left: 40px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 32px;
   text-align: left;
 }
-.overview-content-right{
-  width:50%;
+.overview-content-right {
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left:10px;
+  padding-left: 10px;
 }
 </style>
-
