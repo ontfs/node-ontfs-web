@@ -10,7 +10,8 @@ export default {
     blockstonextround: 0,
     totalstake: {},
     offnodelist: {},
-    rankchangelist: []
+    rankchangelist: [],
+    storageList: []
   },
   getters: {
     nodeSummary: state => state.summary,
@@ -19,7 +20,8 @@ export default {
     offNodeList: state => state.offnodelist,
     blockstonext: state => state.blockstonextround,
     totalstakeamount: state => state.totalstake,
-    rankchangelist: state => state.rankchangelist
+    rankchangelist: state => state.rankchangelist,
+    storageList: state => state.storageList
   },
   mutations: {
     setNodeSummary(state, payload) {
@@ -42,6 +44,9 @@ export default {
     },
     setRankChangeList(state, payload) {
       state.rankchangelist = payload
+    },
+    setStorageList(state, payload) {
+      state.storageList = payload
     }
   },
   actions: {
@@ -80,6 +85,11 @@ export default {
       let url = expURL + '/v2/nodes/rank-change'
       let ret = await axios.get(url)
       commit('setRankChangeList', ret.data.result)
+    },
+    async getStorageList({ commit }, params) {
+      let url = expURL + '/v2/nodes/storage-node'
+      let ret = await axios.get(url)
+      commit('setStorageList', ret.data.result)
     }
   }
 }

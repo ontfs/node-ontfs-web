@@ -13,7 +13,8 @@ export default {
     txList: {},
     transferList: {},
     voterList: {},
-    detailMapCode: {}
+    detailMapCode: {},
+    storageInfo: {}
   },
   getters: {
     nodeonchaininfo: state => state.onchaininfo,
@@ -25,7 +26,8 @@ export default {
     txList: state => state.txList,
     transferList: state => state.transferList,
     voterList: state => state.voterList,
-    detailMapCode: state => state.detailMapCode
+    detailMapCode: state => state.detailMapCode,
+    storageInfo: state => state.storageInfo
   },
   mutations: {
     setnodeonchaindetailinfo(state, payload) {
@@ -57,6 +59,9 @@ export default {
     },
     setdetailmapcode(state, payload) {
       state.detailMapCode = payload
+    },
+    setstorageInfo(state, payload) {
+      state.storageInfo = payload
     }
   },
   actions: {
@@ -66,11 +71,18 @@ export default {
       commit('setnodeonchaindetailinfo', ret.data.result)
     },
     async getNodeOffchainInfo({ commit }, params) {
-      let url =
-        'http://192.168.1.129:8585/v2/nodes/off-chain-info?public_key=' +
-        params.pk
+      let url = expURL + '/v2/nodes/off-chain-info?public_key=' + params.pk
       let ret = await axios.get(url)
       commit('setnodeoffchaindetailinfo', ret.data.result)
+      commit('setdetailmapcode', {
+        latitude: ret.data.result.latitude,
+        longitude: ret.data.result.longitude
+      })
+    },
+    async getStorageNodeInfo({ commit }, params) {
+      let url = expURL + '/v2/nodes/storage-node/' + params.pk
+      let ret = await axios.get(url)
+      commit('setstorageInfo', ret.data.result)
       commit('setdetailmapcode', {
         latitude: ret.data.result.latitude,
         longitude: ret.data.result.longitude

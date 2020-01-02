@@ -24,6 +24,7 @@ export default {
   nodelist: {
     cnode: '共识节点',
     nnode: '候选节点',
+    snode: '存储节点',
     rank: '#',
     rankDesc: '自上一周期',
     name: '名称',
@@ -40,7 +41,13 @@ export default {
     initpos: '初始质押量',
     totalstake: '总质押量',
     reward1:
-      '分配给下一共识周期质押用户的手续费比例由节点自行制定。请注意并非所有节点都会向质押用户分配本体基金会奖励。'
+      '分配给下一共识周期质押用户的手续费比例由节点自行制定。请注意并非所有节点都会向质押用户分配本体基金会奖励。',
+    totalCap: '总容量',
+    remainCap: '剩余容量',
+    serverTime: '服务到期时间',
+    minpdp: '最小 PDP 间隔',
+    mort: '抵押数量',
+    gain: '收益'
   },
   cobuild: {
     title: '共建节点'

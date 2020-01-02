@@ -2,22 +2,32 @@
   <div>
     <top-nav></top-nav>
     <el-main>
-        <div class="detail">
-          <back-nav :back="$t('back.back')" :title="$t('detail.title')"></back-nav>
-          <detailoverview-nav :onchaindata="onchaindata" :offchaindata="offchaindata"></detailoverview-nav>
-          <detailtable-nav :address="onchaindata.address" :pk="onchaindata.public_key"></detailtable-nav>
-        </div>
+      <div class="detail">
+        <back-nav
+          :back="$t('back.back')"
+          :title="$t('detail.title')"
+        ></back-nav>
+        <detailoverview-nav
+          :onchaindata="onchaindata"
+          :offchaindata="offchaindata"
+          :storagedata="storagedata"
+        ></detailoverview-nav>
+        <detailtable-nav
+          :address="onchaindata.address"
+          :pk="onchaindata.public_key"
+        ></detailtable-nav>
+      </div>
     </el-main>
     <footer-nav></footer-nav>
   </div>
 </template>
 
 <script>
-import TopNav from "../common/Top";
-import FooterNav from "../common/Footer";
-import DetailoverviewNav from "../component/Detailoverview";
-import DetailtableNav from "../component/Detailtable";
-import BackNav from "../component/Goback";
+import TopNav from '../common/Top'
+import FooterNav from '../common/Footer'
+import DetailoverviewNav from '../component/Detailoverview'
+import DetailtableNav from '../component/Detailtable'
+import BackNav from '../component/Goback'
 export default {
   name: 'detail',
   components: {
@@ -32,35 +42,75 @@ export default {
   },
   computed: {
     onchaindata() {
-        return this.$store.getters.nodeonchaininfo || {};
+      return this.$store.getters.nodeonchaininfo || {}
     },
     offchaindata() {
-        return this.$store.getters.nodeoffchaininfo || {};
+      return this.$store.getters.nodeoffchaininfo || {}
     },
+    storagedata() {
+      return this.$store.getters.storageInfo || {}
+    }
   },
-  watch:{
-  },
+  watch: {},
   data() {
-    return {
-    };
+    return {}
   },
   mounted() {
-    this.getDetailOverview()
-    window.scrollTo(0,0);
+    let TYPE = this.$route.params.type
+    if (TYPE === 'balance') {
+      this.getDetailOverview()
+    } else if (TYPE === 'storage') {
+      this.getStorageDetail()
+    } else {
+      this.getDetailOverview()
+    }
+    window.scrollTo(0, 0)
   },
   methods: {
-    getDetailOverview(){
+    getDetailOverview() {
       let pk = this.$route.params.pk
-      this.$store.dispatch("getNodeOnchainInfo",{pk:pk}).then();
-      this.$store.dispatch("getNodeOffchainInfo",{pk:pk}).then();
+      this.$store.dispatch('getNodeOnchainInfo', { pk: pk }).then()
+      this.$store.dispatch('getNodeOffchainInfo', { pk: pk }).then()
     },
+    getStorageDetail() {
+      let pk = this.$route.params.pk
+      this.$store.dispatch('getStorageNodeInfo', { pk: pk }).then()
+    }
   },
-  created(){
-    if(this.$route.params.type == undefined){
-      this.$router.push({
-            name: 'detailtype',
-            params: {pk: this.$route.params.pk,address:this.$route.params.address,type:'balance'}
-          })
+  created() {
+    let TYPE = this.$route.params.type
+    switch (TYPE) {
+      case 'balance':
+        this.$router.push({
+          name: 'detailtype',
+          params: {
+            pk: this.$route.params.pk,
+            address: this.$route.params.address,
+            type: 'balance'
+          }
+        })
+        break
+      case 'storage':
+        this.$router.push({
+          name: 'detailstorage',
+          params: {
+            pk: this.$route.params.pk,
+            address: this.$route.params.address,
+            type: 'storage'
+          }
+        })
+        break
+
+      default:
+        this.$router.push({
+          name: 'detailtype',
+          params: {
+            pk: this.$route.params.pk,
+            address: this.$route.params.address,
+            type: 'balance'
+          }
+        })
+        break
     }
   }
 }
@@ -82,16 +132,16 @@ li {
 a {
   color: #42b983;
 }
-.el-main{
-    padding:0;
+.el-main {
+  padding: 0;
 }
-.detail{
-  background-color: #F3F6F8;
+.detail {
+  background-color: #f3f6f8;
 }
-a:-webkit-any-link{
-  text-decoration:none !important;
+a:-webkit-any-link {
+  text-decoration: none !important;
 }
-.s-color{
-  color:#2fa3f1;
+.s-color {
+  color: #2fa3f1;
 }
 </style>

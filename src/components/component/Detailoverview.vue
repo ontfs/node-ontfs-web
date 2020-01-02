@@ -2,9 +2,14 @@
   <div class="overview-container">
     <div class="overview-content">
       <div class="overview-content-left">
+        <DetailStorageViewInfo-nav
+          v-if="$route.params.type === 'storage'"
+          :storagedata="storagedata"
+        ></DetailStorageViewInfo-nav>
         <detailoverviewinfo-nav
           :onchaindata="onchaindata"
           :offchaindata="offchaindata"
+          v-else
         ></detailoverviewinfo-nav>
       </div>
       <div class="overview-content-right">
@@ -16,12 +21,14 @@
 
 <script>
 import DetailoverviewinfoNav from '../component/Detailoverviewinfo'
+import DetailStorageViewInfoNav from '../component/DetailStorageViewInfo'
 import DetailmapNav from '../component/Detailmap'
 export default {
   name: 'detailoverview',
   components: {
     DetailoverviewinfoNav,
-    DetailmapNav
+    DetailmapNav,
+    DetailStorageViewInfoNav
   },
   props: {
     onchaindata: {
@@ -31,6 +38,12 @@ export default {
       }
     },
     offchaindata: {
+      type: Object,
+      default: function() {
+        return {}
+      }
+    },
+    storagedata: {
       type: Object,
       default: function() {
         return {}

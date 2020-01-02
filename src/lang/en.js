@@ -24,6 +24,7 @@ export default {
   nodelist: {
     cnode: 'Consensus Nodes',
     nnode: 'Candidate Nodes',
+    snode: 'Storage Nodes',
     rank: '#',
     rankDesc: 'Since Last Round',
     name: 'Name',
@@ -42,7 +43,13 @@ export default {
     initpos: 'Init Pos',
     totalstake: 'Total Stake',
     reward1:
-      'This is the portion of transaction fees received the node has chosen to share with users who have authorized stakes with them in the next consensus round. Note not all nodes share the Ontology Foundation bonus with users who have authorized stakes with them.'
+      'This is the portion of transaction fees received the node has chosen to share with users who have authorized stakes with them in the next consensus round. Note not all nodes share the Ontology Foundation bonus with users who have authorized stakes with them.',
+    totalCap: 'Total Capacity',
+    remainCap: 'Remaining Capacity',
+    serverTime: 'Service Expiration Time',
+    minpdp: 'Minimum PDP interval',
+    mort: 'Number of mortgages',
+    gain: 'Gain'
   },
   cobuild: {
     title: 'Co-build Node'
