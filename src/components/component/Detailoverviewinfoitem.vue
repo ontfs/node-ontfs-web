@@ -16,7 +16,7 @@
           <a
             class="s-color"
             target="_blank"
-            :href="'https://explorer.ont.io/address/' + text"
+            :href="domain + '/address/' + text"
             >{{ text }}</a
           >
         </div>
@@ -24,7 +24,7 @@
           <a
             class="s-color"
             target="_blank"
-            :href="'https://explorer.ont.io/ontid/' + text"
+            :href="domain + '/ontid/' + text"
             >{{ text }}</a
           >
         </div>
@@ -58,6 +58,11 @@ export default {
     },
     texttype: {
       type: String
+    }
+  },
+  data() {
+    return {
+      domain: process.env.VUE_APP_DOMAIN
     }
   }
 }
