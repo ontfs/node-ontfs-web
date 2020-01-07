@@ -3,7 +3,7 @@
     <el-row>
       <el-col :span="24">
         <div class="nodelogo-wrapper">
-          <img class="nodelogo" :src="offchaindata.logo_url" />
+          <!-- <img class="nodelogo" :src="offchaindata.logo_url" /> -->
         </div>
       </el-col>
     </el-row>

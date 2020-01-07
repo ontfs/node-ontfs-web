@@ -37,11 +37,14 @@
     </el-table-column>
     <el-table-column prop="node_rank" :label="$t('nodelist.top49')" width="120">
       <template slot="header">
-        <el-tooltip class="item" effect="light" placement="top">
+        <span>
+          {{ $t('nodelist.top49') }}
+        </span>
+        <!-- <el-tooltip class="item" effect="light" placement="top">
           <span>
             {{ $t('nodelist.top49') }}
           </span>
-        </el-tooltip>
+        </el-tooltip> -->
       </template>
       <template slot-scope="scope">
         <div v-if="scope.row.node_rank < 50" class="top49">Top 49</div>
