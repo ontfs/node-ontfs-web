@@ -33,23 +33,18 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="name" :label="$t('nodelist.name')" fixed width="130">
+    <el-table-column prop="name" :label="$t('nodelist.name')" fixed width="180">
     </el-table-column>
-    <el-table-column prop="node_rank" :label="$t('nodelist.top49')" width="120">
+    <!-- <el-table-column prop="node_rank" :label="$t('nodelist.top49')" width="120">
       <template slot="header">
         <span>
           {{ $t('nodelist.top49') }}
         </span>
-        <!-- <el-tooltip class="item" effect="light" placement="top">
-          <span>
-            {{ $t('nodelist.top49') }}
-          </span>
-        </el-tooltip> -->
       </template>
       <template slot-scope="scope">
         <div v-if="scope.row.node_rank < 50" class="top49">Top 49</div>
       </template>
-    </el-table-column>
+    </el-table-column> -->
     <el-table-column prop="region" :label="$t('nodelist.location')" width="150">
     </el-table-column>
     <el-table-column prop="volume" :label="$t('nodelist.totalCap')" width="150">
@@ -88,9 +83,9 @@ export default {
     }
   },
   methods: {
-    handleClick(row) {
-      console.log(row)
-    },
+    // handleClick(row) {
+    //   console.log(row)
+    // },
     renderHeader(h, { column }) {
       return h('div', [
         h('span', column.label),
@@ -114,9 +109,9 @@ export default {
         params: { pk: row.public_key, address: row.address, type: 'storage' }
       })
     },
-    handle(row, column, event, cell) {
+    handle(row, column) {
       if (column.property == 'stakeprogress') {
-        let url = this.$t('nodelist.stakeurl')
+        // let url = this.$t('nodelist.stakeurl')
         if (parseInt(row.progress) < 100) {
           this.$router.push({
             name: 'stake'

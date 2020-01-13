@@ -40,27 +40,19 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="name" :label="$t('nodelist.name')" fixed width="130">
+    <el-table-column prop="name" :label="$t('nodelist.name')" fixed width="180">
     </el-table-column>
-    <el-table-column prop="node_rank" :label="$t('nodelist.top49')" width="120">
+    <!-- <el-table-column prop="node_rank" :label="$t('nodelist.top49')" width="120">
       <template slot="header" slot-scope="scope">
         <span>
           {{ $t('nodelist.top49') }}
         </span>
-        <!-- <el-tooltip class="item" effect="light" placement="top">
-          <div slot="content">
-            <p class="tip-content-text">{{ $t('nodelist.top49Desc') }}</p>
-          </div>
-          <span>
-            {{ $t('nodelist.top49') }}
-          </span>
-        </el-tooltip> -->
       </template>
       <template slot-scope="scope">
         <div v-if="scope.row.node_rank < 50" class="top49">Top 49</div>
       </template>
-    </el-table-column>
-    <el-table-column prop="region" :label="$t('nodelist.location')" width="100">
+    </el-table-column> -->
+    <el-table-column prop="region" :label="$t('nodelist.location')" width="140">
     </el-table-column>
     <el-table-column
       prop="current_stake"
@@ -183,9 +175,9 @@ export default {
     }
   },
   methods: {
-    handleClick(row) {
-      console.log(row)
-    },
+    // handleClick(row) {
+    //   console.log(row)
+    // },
     renderHeader(h, { column }) {
       return h('div', [
         h('span', column.label),
@@ -209,7 +201,7 @@ export default {
         params: { pk: row.public_key, address: row.address, type: 'balance' }
       })
     },
-    handle(row, column, event, cell) {
+    handle(row) {
       // if (column.property == 'stakeprogress') {
       //   let url = this.$t('nodelist.stakeurl')
       //   if (parseInt(row.progress) < 100) {

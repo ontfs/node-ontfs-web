@@ -3,9 +3,12 @@
     <div class="d-table-container">
       <div class="d-table-content">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane :label="$t('tab.balance')" name="first">{{
-            $t('tab.balance')
-          }}</el-tab-pane>
+          <el-tab-pane
+            v-if="$route.params.type != 'storage'"
+            :label="$t('tab.balance')"
+            name="first"
+            >{{ $t('tab.balance') }}</el-tab-pane
+          >
           <el-tab-pane :label="$t('tab.transactions')" name="second">{{
             $t('tab.transactions')
           }}</el-tab-pane>
@@ -60,7 +63,7 @@ export default {
     }
   },
   methods: {
-    handleClick(tab, event) {
+    handleClick(tab) {
       if (tab.name == 'first') {
         this.transferFlag = false
         this.voterFlag = false
@@ -85,6 +88,16 @@ export default {
         this.transferFlag = false
         this.voterFlag = true
       }
+    }
+  },
+  mounted() {
+    let TYPE = this.$route.params.type
+    if (TYPE == 'storage') {
+      this.activeName = 'second'
+      this.transferFlag = false
+      this.voterFlag = false
+      this.balanceFlag = false
+      this.transactionsFlag = true
     }
   }
 }
